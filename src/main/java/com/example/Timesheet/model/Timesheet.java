@@ -3,6 +3,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -12,7 +13,10 @@ public class Timesheet {
     private Long id;
 
     private LocalDate date;
-    private int hours;
+    private LocalTime startTime;
+    private LocalTime endTime;
+    private boolean lunch;
+    private LocalTime lunchOther;
     private String description;
 
     @ManyToOne
