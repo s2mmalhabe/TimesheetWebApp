@@ -1,5 +1,6 @@
 package com.example.Timesheet.config;
 
+import com.example.Timesheet.service.CustomUserDetailsService;  // Import your CustomUserDetailsService
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -39,5 +40,8 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // Add UserDetailsService Bean here if needed
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new CustomUserDetailsService();
+    }
 }
