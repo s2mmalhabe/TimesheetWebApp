@@ -1,10 +1,11 @@
-package com.example.Timesheet.model;
+package com.example.Timesheet.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -17,10 +18,9 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String email;
     private String password;
-    private String role; // "USER" or "ADMIN"
+    private Role role; // "USER" or "ADMIN"
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

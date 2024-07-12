@@ -1,8 +1,7 @@
-package com.example.Timesheet.model;
+package com.example.Timesheet.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.apache.logging.log4j.util.StringMap;
 
 import java.util.Set;
 
@@ -17,9 +16,4 @@ public class Project {
 
     @OneToMany(mappedBy = "project")
     private Set<Timesheet> timesheets;
-
-    public Long getId() {
-        return id;
-    }
-
 }
