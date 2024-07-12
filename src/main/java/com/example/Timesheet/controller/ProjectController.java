@@ -1,17 +1,18 @@
 package com.example.Timesheet.controller;
 
-import com.example.Timesheet.model.Project;
+import com.example.Timesheet.entity.Project;
 import com.example.Timesheet.service.ProjectService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/projects")
+@RequiredArgsConstructor
 public class ProjectController {
-    @Autowired
-    private ProjectService projectService;
+
+    private final ProjectService projectService;
 
     @PostMapping
     public Project createProject(@RequestBody Project project) {

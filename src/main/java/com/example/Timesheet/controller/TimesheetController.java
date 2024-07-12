@@ -1,17 +1,18 @@
 package com.example.Timesheet.controller;
 
-import com.example.Timesheet.model.Timesheet;
+import com.example.Timesheet.entity.Timesheet;
 import com.example.Timesheet.service.TimesheetService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/timesheets")
+@RequiredArgsConstructor
 public class TimesheetController {
-    @Autowired
-    private TimesheetService timesheetService;
+
+    private final TimesheetService timesheetService;
 
     @PostMapping
     public Timesheet createTimesheet(@RequestBody Timesheet timesheet) {
