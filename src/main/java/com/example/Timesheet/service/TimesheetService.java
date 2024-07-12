@@ -2,15 +2,16 @@ package com.example.Timesheet.service;
 
 import com.example.Timesheet.entity.Timesheet;
 import com.example.Timesheet.repository.TimesheetRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class TimesheetService {
-    @Autowired
-    private TimesheetRepository timesheetRepository;
+
+    private final TimesheetRepository timesheetRepository;
 
     public Timesheet createTimesheet(Timesheet timesheet) {
         return timesheetRepository.save(timesheet);
