@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Timesheet
+  datasource:
+    url: jdbc:mysql://localhost:3306/timesheetdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+application:
+  cors:
+    allowedOrigins: ["**"]
+    allowedMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
+    allowedHeaders: ["*"]
+    exposedHeaders: ["*"]
+    allowCredentials: true
+    authorizedPaths: ["/**"]
+  jwt:
+    secret: XmnVQYY1DvHynZjxf10ZakeRAqVTgwnUW8skyFzSAEVMI7w6pQSBcVEernwoUGfL
+    expirationInMinutes: 30
+    header: Authorization
+    bearer: "Bearer "   # NO TOUCHY!!
