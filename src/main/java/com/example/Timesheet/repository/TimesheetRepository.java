@@ -1,6 +1,6 @@
 package com.example.Timesheet.repository;
 
-import com.example.Timesheet.model.Timesheet;
+import com.example.Timesheet.entity.Timesheet;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
