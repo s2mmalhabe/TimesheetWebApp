@@ -20,6 +20,6 @@ import { TimesheetAppComponent } from './timesheetApp';
   ],
   imports: [
     AppComponent
-  ]
+  ],
 })
 export class AppModules {}
