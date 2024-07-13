@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
 
-@Component({ templateUrl: 'previousProjects.component.html' })
+@Component({
+  selector: 'previousProjects',
+  templateUrl: 'previousProjects.component.html' })
 export class PreviousProjectsComponent {}

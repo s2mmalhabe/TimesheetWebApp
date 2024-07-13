@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
 
-@Component({ templateUrl: 'login.component.html' })
+@Component({
+  selector: 'login',
+  templateUrl: 'login.component.html' })
 export class LoginComponent {}
