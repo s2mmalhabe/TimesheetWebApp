@@ -15,7 +15,7 @@ export const routes: Routes = [
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'previous projects', component: PreviousProjectsComponent},
+  {path: 'previousProjects', component: PreviousProjectsComponent},
   {path: 'timesheet', component: TimesheetAppComponent},
   //{path: 'calendar', component: CalendarComponent},
 ];
