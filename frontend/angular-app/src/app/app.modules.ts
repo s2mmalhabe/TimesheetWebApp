@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
+//import { provideHttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { AboutUsComponent } from './aboutUs';
 import { ContactComponent } from './contact';
-import { GalleryComponent } from './gallery';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { PreviousProjectsComponent } from './previousProjects';
@@ -12,14 +17,18 @@ import { TimesheetAppComponent } from './timesheetApp';
   declarations: [
     AboutUsComponent,
     ContactComponent,
-    GalleryComponent,
     HomeComponent,
     LoginComponent,
     PreviousProjectsComponent,
     TimesheetAppComponent
   ],
   imports: [
-    AppComponent
+    AppComponent,
+    BrowserModule,
+    AppRoutingModule,
+    //provideHttpClient,
+    FormsModule
+
   ],
 })
 export class AppModules {}
