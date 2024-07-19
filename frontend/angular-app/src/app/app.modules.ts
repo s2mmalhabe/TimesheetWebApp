@@ -20,7 +20,7 @@ import { TimesheetAppComponent } from './timesheetApp';
     HomeComponent,
     LoginComponent,
     PreviousProjectsComponent,
-    TimesheetAppComponent
+    HeaderComponent
   ],
   imports: [
     AppComponent,
@@ -30,5 +30,6 @@ import { TimesheetAppComponent } from './timesheetApp';
     FormsModule
 
   ],
+  exports: [HeaderComponent],
 })
 export class AppModules {}
