@@ -1,6 +1,7 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from "@angular/core";
 import {LoginComponent} from "./component/login/login.component";
 import {HeaderComponent} from "./component/header/header.component";
+import {FooterComponent} from "./component/footer/footer.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthInterceptor} from "./service/auth-interceptor";
@@ -22,9 +23,10 @@ import {PreviousProjectsComponent} from "./component/previousProjects/previousPr
     HomeComponent,
     LoginComponent,
     PreviousProjectsComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, FooterComponent],
   imports: [
     MaterialModule,
     CalendarComponent,
