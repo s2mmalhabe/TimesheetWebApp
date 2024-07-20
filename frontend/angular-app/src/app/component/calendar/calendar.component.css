@@ -1,0 +1,57 @@
+.table {
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+
+}
+
+.mat-column-position {
+  width: 32px;
+  border-right: 2px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-name {
+  border-right: 2px solid currentColor;
+  padding-right: 24px;
+  width: 30%;
+}
+
+.mat-column-object {
+  width: 30%;
+  border-right: 2px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-starttime {
+  width: 3%;
+  border-right: 2px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-lunch {
+  width: 3%;
+  border-right: 2px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-endtime {
+  width: 3%;
+  border-right: 2px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-description {
+  width: 30%;
+  border-right: 2px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+

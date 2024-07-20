@@ -1,10 +1,15 @@
 package com.example.Timesheet.controller;
 
+import com.example.Timesheet.config.ApplicationProperties;
 import com.example.Timesheet.entity.User;
+import com.example.Timesheet.model.CredentialsDTO;
+import com.example.Timesheet.model.CustomResponse;
+import com.example.Timesheet.model.UserDTO;
 import com.example.Timesheet.service.JwtService;
 import com.example.Timesheet.service.UserService;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,17 +18,27 @@ import java.util.List;
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserController {
+    private final ApplicationProperties applicationProperties;
     private final UserService userService;
     private final JwtService jwtService;
-    private final AuthenticationManager authenticationManager;
 
     @PostMapping
+    @PreAuthorize("ADMIN")
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    @PreAuthorize("ADMIN")
+    public List<UserDTO> getAllUsers() {
+        return userService.getAllUsers_dto();
+    }
+
+    @PostMapping(value = "login")
+    public CustomResponse login(@RequestBody CredentialsDTO credentials, HttpServletResponse res) {
+        CustomResponse response = this.userService.login(credentials);
+        if (response.isSuccess())
+            res.setHeader(applicationProperties.getJwt().getHeader(), applicationProperties.getJwt().getBearer() + jwtService.generateToken(credentials.getEmail()));
+        return response;
     }
 }

@@ -1,27 +1,18 @@
-import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from "@angular/core";
-
-
-import {HomeComponent} from "./home";
-import {AboutUsComponent} from "./aboutUs";
-import {ContactComponent} from "./contact";
-import {LoginComponent} from "./login";
-import {PreviousProjectsComponent} from "./previousProjects";
-import {TimesheetAppComponent} from "./timesheetApp";
-//import {CalendarComponent} from "./calendar/calendar.component";
+import { Routes } from '@angular/router';
+import {LoginComponent} from "./component/login/login.component";
+import {HomeComponent} from "./component/home/home.component";
+import {AboutUsComponent} from "./component/aboutUs/aboutUs.component";
+import {ContactComponent} from "./component/contact/contact.component";
+import {PreviousProjectsComponent} from "./component/previousProjects/previousProjects.component";
+import {TimesheetAppComponent} from "./component/timesheetApp/timesheetApp.component";
+import {CalendarComponent} from "./component/calendar/calendar.component";
 
 export const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about', component: AboutUsComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'previousProjects', component: PreviousProjectsComponent},
-  {path: 'timesheet', component: TimesheetAppComponent},
-  //{path: 'calendar', component: CalendarComponent},
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'previous-projects', component: PreviousProjectsComponent },
+  { path: 'timesheet', component: TimesheetAppComponent },
+  { path: 'calendar', component: CalendarComponent }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
