@@ -35,7 +35,7 @@ import {PreviousProjectsComponent} from "./component/previousProjects/previousPr
     MatDatepickerModule,
     MatFormFieldModule,
     MatTableModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
