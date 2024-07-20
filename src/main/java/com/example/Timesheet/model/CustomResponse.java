@@ -10,6 +10,10 @@ public class CustomResponse {
     Object object;
     String message;
 
+    public CustomResponse(boolean success) {
+        this.success = success;
+    }
+
     public CustomResponse(Object object) {
         this.success = object != null;
         this.object = object;

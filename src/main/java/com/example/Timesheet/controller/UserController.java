@@ -41,4 +41,9 @@ public class UserController {
             res.setHeader(applicationProperties.getJwt().getHeader(), applicationProperties.getJwt().getBearer() + jwtService.generateToken(credentials.getEmail()));
         return response;
     }
+
+    @PostMapping(value = "register")
+    public CustomResponse register(@RequestBody CredentialsDTO credentials) {
+        return this.userService.createUser(credentials);
+    }
 }

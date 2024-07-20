@@ -38,8 +38,9 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User createUser(CredentialsDTO credentials) {
-        return this.createUser(modelMapper.map(credentials, User.class));
+    public CustomResponse createUser(CredentialsDTO credentials) {
+        User user = this.createUser(modelMapper.map(credentials, User.class));
+        return new CustomResponse(user != null);
     }
 
     private List<User> getAllUsers() {
